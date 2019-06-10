@@ -14,3 +14,7 @@
 h4 {
     margin-left: 25%;
 }
+
+.mandatoryFields {
+    color: red;
+}
