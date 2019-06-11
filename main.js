@@ -14,6 +14,7 @@ $(function() {
 });
 /* -- ./..Contract Start Date and Contract End Date input fields made datepicker */
 
+/* -- Form Validation */
 $(function() {
 
     $('#submitBtn').on('click', function() {
@@ -29,4 +30,13 @@ $(function() {
             alert('throw error message');
         }
     });
+});
+/* -- ./..Form Validation */
+
+$(function() {
+
+    // dropdown for Billing Cycle is made select2
+    $('#billingCycle').select2();
+
+    
 });
