@@ -16,6 +16,12 @@ $(function() {
 
 /* -- Form Validation */
 $(function() {
+    var installmentPaymenttype;
+    var fullPaymentType;
+    $('.paymentTypeRadio').on('change', function() {
+        installmentPaymenttype = document.getElementById('installmentPayment').checked;
+        fullPaymentType = document.getElementById('fullPayment').checked;
+    });
 
     $('#submitBtn').on('click', function() {
         let fName = document.getElementById('firstName').value;
@@ -26,7 +32,7 @@ $(function() {
         let billingCycle = document.getElementById('billingCycle').value;
 
         if((fName == "") || (lName == "") || (contactNum == "") || (contractStart == "") || 
-            (contractEnd == "") || (billingCycle == "")) {
+            (contractEnd == "") || (billingCycle == "") || ((installmentPaymenttype == "") && (fullPaymentType == ""))) {
             alert('throw error message');
         }
     });
