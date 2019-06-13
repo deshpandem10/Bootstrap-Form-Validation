@@ -33,7 +33,11 @@ $(function() {
 
         if((fName == "") || (lName == "") || (contactNum == "") || (contractStart == "") || 
             (contractEnd == "") || (billingCycle == "") || ((installmentPaymenttype == "") && (fullPaymentType == ""))) {
-            alert('throw error message');
+            alert('throw error message here...');
+        }
+        else {
+            //RegEx - Regular Expression application on input fields wherever necessary
+
         }
     });
 });
@@ -44,5 +48,4 @@ $(function() {
     // dropdown for Billing Cycle is made select2
     $('#billingCycle').select2();
 
-    
 });

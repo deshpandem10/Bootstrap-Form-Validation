@@ -5,11 +5,11 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" />
-
         <link rel="stylesheet" href="stylesheet.css" />
     </head>
 
@@ -89,6 +89,7 @@
                         <label class="col-sm-4 control-label">Billing Cycle: <sup class="mandatoryFields">*</sup></label>
                         <div class="col-sm-8">
                             <select class="form-control" id="billingCycle">
+                                <option value=""></option>
                                 <option value="monthly">Monthly</option>
                                 <option value="quarterly">Quarterly</option>
                                 <option value="halfYearly">Half Yearly</option>
@@ -125,7 +126,7 @@
                         <p style="color: red;">( * ) - Mandatory Fields </p>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+                        <button type="button" class="btn btn-primary" id="submitBtn">Submit</button>
                         <button type="reset" class="btn btn-danger" id="resetBtn">Reset</button>
                     </div>
                 </div>
