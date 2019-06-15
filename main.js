@@ -37,7 +37,8 @@ $(function() {
         }
         else {
             //RegEx - Regular Expression application on input fields wherever necessary
-
+            
+            
         }
     });
 });
