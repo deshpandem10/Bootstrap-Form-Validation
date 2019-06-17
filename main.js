@@ -37,8 +37,26 @@ $(function() {
         }
         else {
             //RegEx - Regular Expression application on input fields wherever necessary
-            
-            
+            let regEx_alpha = /^[A-Za-z]+$/g;
+            let regEx_num = /^[0-9]+$/g;
+
+            let fNameStr = fName.match(regEx_alpha);
+            if(fNameStr === null) {
+                Swal.fire ({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Invalid First Name!'
+                });
+            }
+
+            let lNameStr = lName.match(regEx_alpha);
+            if(lNameStr === null) {
+                Swal.fire ({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Invalid Last Name!'
+                });
+            }
         }
     });
 });
@@ -48,5 +66,4 @@ $(function() {
 
     // dropdown for Billing Cycle is made select2
     $('#billingCycle').select2();
-
 });
