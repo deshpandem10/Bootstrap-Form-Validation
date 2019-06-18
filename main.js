@@ -57,13 +57,21 @@ $(function() {
                     text: 'Invalid Last Name!'
                 });
             }
+
+            let contactNumStr = contactNum.match(regEx_num);
+            if(contactNumStr === null) {
+                Swal.fire ({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Invalid Contact Number!'
+                });
+            }
         }
     });
-});
+}); 
 /* -- ./..Form Validation */
 
 $(function() {
-
     // dropdown for Billing Cycle is made select2
     $('#billingCycle').select2();
 });
