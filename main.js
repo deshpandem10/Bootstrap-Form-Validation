@@ -14,7 +14,7 @@ $(function() {
 });
 /* -- ./..Contract Start Date and Contract End Date input fields made datepicker */
 
-/* -- Form Validation */
+
 $(function() {
     var installmentPaymenttype;
     var fullPaymentType;
@@ -23,6 +23,7 @@ $(function() {
         fullPaymentType = document.getElementById('fullPayment').checked;
     });
 
+    /* -- Form Validation */
     $('#submitBtn').on('click', function() {
         let fName = document.getElementById('firstName').value;
         let lName = document.getElementById('lastName').value;
@@ -68,10 +69,21 @@ $(function() {
             }
         }
     });
+    /* -- ./..Form Validation */
+
+    //Analyse contract start date and contract end date to decide the contract total amount
+
+
+
+    //Total Amount calculation
+
+
+    //Installment Amount calculation
 }); 
-/* -- ./..Form Validation */
+
 
 $(function() {
     // dropdown for Billing Cycle is made select2
     $('#billingCycle').select2();
+
 });
