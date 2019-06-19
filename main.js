@@ -21,10 +21,11 @@ $(function() {
     $('.paymentTypeRadio').on('change', function() {
         installmentPaymenttype = document.getElementById('installmentPayment').checked;
         fullPaymentType = document.getElementById('fullPayment').checked;
-    });
+    });   
 
     /* -- Form Validation */
     $('#submitBtn').on('click', function() {
+
         let fName = document.getElementById('firstName').value;
         let lName = document.getElementById('lastName').value;
         let contactNum = document.getElementById('contactNumber').value;
@@ -67,12 +68,24 @@ $(function() {
                     text: 'Invalid Contact Number!'
                 });
             }
+
+            //Analyse contract start date and contract end date to decide the contract total amount
+            let fromDate = moment(new Date(contractStart));
+            let toDate = moment(new Date(contractEnd));
+            console.log('from date: ', fromDate, toDate);
+
+            if(fromDate.isAfter(toDate)) {
+                Swal.fire ({
+                    type: 'error',
+                    title: 'Error',
+                    text: 'Please enter valid Dates!'
+                });
+                return;
+            }
         }
     });
     /* -- ./..Form Validation */
-
-    //Analyse contract start date and contract end date to decide the contract total amount
-
+    
 
 
     //Total Amount calculation
