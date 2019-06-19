@@ -82,16 +82,15 @@ $(function() {
                 });
                 return;
             }
+
+            //Total Amount calculation
+
+
+            //Installment Amount calculation
         }
     });
     /* -- ./..Form Validation */
-    
 
-
-    //Total Amount calculation
-
-
-    //Installment Amount calculation
 }); 
 
 
