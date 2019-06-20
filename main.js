@@ -1,15 +1,14 @@
-
 /* -- Contract Start Date and Contract End Date input fields made datepicker */
 $(function() {
 
     $('#contract-startDate').datetimepicker({
         timepicker: false,
-        format: 'd-m-Y'
+        format: 'd-M-Y'
     });
 
     $('#contract-endDate').datetimepicker({
         timepicker: false,
-        format: 'd-m-Y'
+        format: 'd-M-Y'
     });
 });
 /* -- ./..Contract Start Date and Contract End Date input fields made datepicker */
@@ -18,6 +17,7 @@ $(function() {
 $(function() {
     var installmentPaymenttype;
     var fullPaymentType;
+    var dateDifference;
     $('.paymentTypeRadio').on('change', function() {
         installmentPaymenttype = document.getElementById('installmentPayment').checked;
         fullPaymentType = document.getElementById('fullPayment').checked;
@@ -70,11 +70,10 @@ $(function() {
             }
 
             //Analyse contract start date and contract end date to decide the contract total amount
-            let fromDate = moment(new Date(contractStart));
-            let toDate = moment(new Date(contractEnd));
-            console.log('from date: ', fromDate, toDate);
+            let fromDate = new Date($('#contract-startDate').val());
+            let toDate = new Date($('#contract-endDate').val());
 
-            if(fromDate.isAfter(toDate)) {
+            if(fromDate > toDate) {
                 Swal.fire ({
                     type: 'error',
                     title: 'Error',
@@ -83,13 +82,36 @@ $(function() {
                 return;
             }
 
-            //Total Amount calculation
+            let timeDiff = Math.abs(toDate.getTime() - fromDate.getTime());
+            let dateDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
-
-            //Installment Amount calculation
+            if (dateDiff < 30) {
+                Swal.fire ({
+                    type: 'error',
+                    title: 'Error',
+                    text: 'Minimum duration of Contract should be atleast 1 month!'
+                });
+                return;
+            }           
         }
     });
     /* -- ./..Form Validation */
+
+    //Total Amount calculation and Installment Amount calculation
+    $('#billingCycle').on('change', function() {
+        let billingCycle = $('#billingCycle').val();
+        let fromDate = new Date($('#contract-startDate').val());
+        let toDate = new Date($('#contract-endDate').val());
+
+        let timeDiff = Math.abs(toDate.getTime() - fromDate.getTime());
+        dateDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+        if ((dateDifference == 30) || (dateDifference == 31) && (billingCycle == 'monthly')) {
+            console.log('monthly billing');
+        }
+
+    });
+
 
 }); 
 
@@ -97,5 +119,5 @@ $(function() {
 $(function() {
     // dropdown for Billing Cycle is made select2
     $('#billingCycle').select2();
-
+    
 });
