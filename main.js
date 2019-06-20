@@ -108,6 +108,7 @@ $(function() {
 
         if ((dateDifference == 30) || (dateDifference == 31) && (billingCycle == 'monthly')) {
             console.log('monthly billing');
+            document.getElementById('totalAmount').value = "100";
         }
 
     });
