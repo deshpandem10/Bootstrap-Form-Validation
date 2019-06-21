@@ -106,11 +106,18 @@ $(function() {
         let timeDiff = Math.abs(toDate.getTime() - fromDate.getTime());
         dateDifference = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
-        if ((dateDifference == 30) || (dateDifference == 31) && (billingCycle == 'monthly')) {
-            console.log('monthly billing');
+        if (((dateDifference == 30) || (dateDifference == 31)) && (billingCycle == 'monthly')) {
             document.getElementById('totalAmount').value = "100";
         }
-
+        else if ((dateDifference > 31) && ((dateDifference <= 91) || (dateDifference <= 92))) {
+            document.getElementById('totalAmount').value = "300";
+        }
+        else if ((dateDifference > 92) && (dateDifference <= 184)) {
+            document.getElementById('totalAmount').value = "600";
+        }
+        else if ((dateDifference > 184) && (dateDifference <= 366)) {
+            document.getElementById('totalAmount').value = "1200";
+        }
     });
 
 
