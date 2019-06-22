@@ -119,8 +119,6 @@ $(function() {
             document.getElementById('totalAmount').value = "1200";
         }
     });
-
-
 }); 
 
 
