@@ -8,14 +8,29 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css" />
-        <link rel="stylesheet" href="stylesheet.css" />
+        <link rel="stylesheet" href="../stylesheet.css" />
     </head>
     <body>
         <div class="container">
-            
+            <h3>Fill in the form</h3>
+
+            <form class="form-horizontal" id="contractFormChangedView">
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Personal Information</legend>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">First Name: <sup class="mandatoryFields">*</sup></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="firstName" />
+                        </div>
+                    </div>
+                </fieldset><br />
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Contract Details</legend>
+                </fieldset>
+            </form>  
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -26,6 +41,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="main.js"></script>
+        <script src="../main.js"></script>
     </body>
 </html>
