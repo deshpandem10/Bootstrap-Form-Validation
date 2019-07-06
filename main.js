@@ -35,7 +35,7 @@ $(function() {
 
         if((fName == "") || (lName == "") || (contactNum == "") || (contractStart == "") || 
             (contractEnd == "") || (billingCycle == "") || ((installmentPaymenttype == "") && (fullPaymentType == ""))) {
-            alert('throw error message here...');
+            alert('Please fill in all the mandatory fields!');
         }
         else {
             //RegEx - Regular Expression application on input fields wherever necessary
