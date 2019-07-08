@@ -92,7 +92,9 @@ $(function() {
                     text: 'Minimum duration of Contract should be atleast 1 month!'
                 });
                 return;
-            }           
+            }    
+            
+            //Ajax call to carry all form information on click of submit button
         }
     });
     /* -- ./..Form Validation */
