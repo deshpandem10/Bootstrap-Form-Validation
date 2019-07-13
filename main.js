@@ -49,6 +49,7 @@ $(function() {
                     title: 'Oops...',
                     text: 'Invalid First Name!'
                 });
+                return;
             }
 
             let lNameStr = lName.match(regEx_alpha);
@@ -58,6 +59,7 @@ $(function() {
                     title: 'Oops...',
                     text: 'Invalid Last Name!'
                 });
+                return;
             }
 
             let contactNumStr = contactNum.match(regEx_num);
@@ -67,6 +69,7 @@ $(function() {
                     title: 'Oops...',
                     text: 'Invalid Contact Number!'
                 });
+                return;
             }
 
             //Analyse contract start date and contract end date to decide the contract total amount
@@ -92,9 +95,11 @@ $(function() {
                     text: 'Minimum duration of Contract should be atleast 1 month!'
                 });
                 return;
-            }    
-            
-            //Ajax call to carry all form information on click of submit button
+            }
+
+            //open new page to display entered data on submit
+            location.replace("data.html")
+
         }
     });
     /* -- ./..Form Validation */
